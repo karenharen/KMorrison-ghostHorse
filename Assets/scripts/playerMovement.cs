@@ -6,6 +6,7 @@ public class playerMovement : MonoBehaviour
 {
     public float VertSpeed =20;
     public float HorizSpeed =10;
+    public float RotationSpeed = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -22,5 +23,6 @@ public class playerMovement : MonoBehaviour
         //movement forward
         transform.Translate(Vector3.forward * Time.deltaTime * VertSpeed * verticalInput);
         transform.Translate(Vector3.right * Time.deltaTime * HorizSpeed * horizontalInput);
+        transform.Rotate(Vector3.up, Time.deltaTime * RotationSpeed * horizontalInput);
     }
 }
